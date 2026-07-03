@@ -4,13 +4,13 @@ import { Button } from "@/components/ui/button";
 
 export function ExamDownloads() {
   return (
-    <section id="exams" className="py-24 sm:py-32 bg-transparent relative overflow-hidden min-h-screen flex flex-col justify-center" style={{ scrollSnapAlign: "start" }}>
+    <section id="exams" className="py-24 sm:py-32 bg-transparent relative overflow-hidden min-h-screen flex flex-col justify-center">
       <div className="container relative mx-auto px-4">
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
           whileTap={{ scale: 1.02, boxShadow: "0 0 40px hsl(var(--primary)/0.25)" }}
           style={{ cursor: "pointer" }}
           className="max-w-4xl mx-auto bg-card border border-border rounded-[2rem] sm:rounded-[2.5rem] shadow-xl p-7 sm:p-10 md:p-14 text-center flex flex-col items-center gap-5 sm:gap-6"

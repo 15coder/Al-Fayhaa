@@ -31,23 +31,23 @@ const tracks = [
 
 export function Tracks() {
   return (
-    <section id="tracks" className="py-24 sm:py-32 bg-transparent relative min-h-screen flex flex-col justify-center" style={{ scrollSnapAlign: "start" }}>
+    <section id="tracks" className="py-24 sm:py-32 bg-transparent relative min-h-screen flex flex-col justify-center">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14 md:mb-16">
           <motion.h2
-            initial={{ opacity: 0, y: 60 }}
+            initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
             className="text-2xl sm:text-3xl font-bold text-primary md:text-4xl mb-3 sm:mb-4 dark:text-white"
           >
             مساراتنا التعليمية
           </motion.h2>
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
+            transition={{ duration: 0.35, delay: 0.08 }}
             className="text-muted-foreground text-base sm:text-lg"
           >
             برامج مخصصة تناسب احتياجات كل مرحلة، صُممت بعناية لتوجيه الطالب نحو أقصى درجات التفوق
@@ -58,12 +58,12 @@ export function Tracks() {
           {tracks.map((track, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 80, scale: 0.93 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.7, delay: track.delay, ease: "easeOut" }}
-              whileTap={{ scale: 1.04 }}
-              whileHover={{ y: -6 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.4, delay: track.delay * 0.5, ease: "easeOut" }}
+              whileTap={{ scale: 1.02 }}
+              whileHover={{ y: -4 }}
               style={{ cursor: "pointer" }}
               className={index === 2 ? "sm:col-span-2 md:col-span-1" : ""}
             >

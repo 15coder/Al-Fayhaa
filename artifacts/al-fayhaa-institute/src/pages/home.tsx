@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { motion } from "framer-motion";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { Hero } from "@/components/home/hero";
@@ -24,8 +23,8 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_60%_at_15%_10%,hsl(var(--primary)/0.08),transparent)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_85%_80%,hsl(167_100%_70%/0.06),transparent)]" />
 
-        {/* Full watermark — centered, fully visible */}
-        <motion.img
+        {/* Full watermark — centered, fully visible, static */}
+        <img
           src={LogoMark}
           alt=""
           aria-hidden="true"
@@ -39,33 +38,25 @@ export default function Home() {
             transform: "translate(-50%, -50%)",
             objectFit: "contain",
           }}
-          animate={{ rotate: [0, 6, -4, 0], scale: [1, 1.04, 0.98, 1] }}
-          transition={{ repeat: Infinity, duration: 20, ease: "easeInOut" }}
         />
 
-        {/* Animated colour orbs */}
-        <motion.div
+        {/* Static colour orbs */}
+        <div
           className="absolute h-[600px] w-[600px] rounded-full blur-[120px] opacity-30"
           style={{ background: "hsl(var(--primary)/0.4)", top: "-10%", right: "-10%" }}
-          animate={{ x: [0, 80, -40, 0], y: [0, 60, -30, 0] }}
-          transition={{ repeat: Infinity, duration: 20, ease: "easeInOut" }}
         />
-        <motion.div
+        <div
           className="absolute h-[500px] w-[500px] rounded-full blur-[100px] opacity-25"
           style={{ background: "hsl(167 100% 50% / 0.5)", bottom: "10%", left: "-5%" }}
-          animate={{ x: [0, -60, 40, 0], y: [0, -50, 30, 0] }}
-          transition={{ repeat: Infinity, duration: 25, ease: "easeInOut", delay: 3 }}
         />
-        <motion.div
+        <div
           className="absolute h-[400px] w-[400px] rounded-full blur-[90px] opacity-20"
           style={{ background: "hsl(250 80% 60% / 0.4)", top: "40%", left: "40%" }}
-          animate={{ x: [0, 50, -70, 0], y: [0, -40, 60, 0] }}
-          transition={{ repeat: Infinity, duration: 30, ease: "easeInOut", delay: 6 }}
         />
       </div>
 
       <Header />
-      <main className="flex-1 pt-20" style={{ scrollSnapType: "y proximity" }}>
+      <main className="flex-1 pt-20">
         <Hero />
         <News />
         <Tracks />

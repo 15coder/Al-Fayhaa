@@ -5,18 +5,14 @@ import VerticalLogo from "@assets/20260703_055612_1783047654649.jpg";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-transparent min-h-screen flex flex-col justify-center pb-16" style={{ scrollSnapAlign: "start" }}>
-      {/* Soft blobs */}
-      <motion.div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3 pointer-events-none"
-        animate={{ scale: [1, 1.15, 1], opacity: [0.6, 1, 0.6] }}
-        transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}>
+    <section className="relative overflow-hidden bg-transparent min-h-screen flex flex-col justify-center pb-16">
+      {/* Soft blobs — static, no animation */}
+      <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3 pointer-events-none">
         <div className="h-[280px] w-[280px] sm:h-[400px] sm:w-[400px] rounded-full bg-teal-400/10 blur-[80px]" />
-      </motion.div>
-      <motion.div className="absolute bottom-0 left-0 translate-y-1/3 -translate-x-1/3 pointer-events-none"
-        animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.9, 0.5] }}
-        transition={{ repeat: Infinity, duration: 10, ease: "easeInOut", delay: 1 }}>
+      </div>
+      <div className="absolute bottom-0 left-0 translate-y-1/3 -translate-x-1/3 pointer-events-none">
         <div className="h-[320px] w-[320px] sm:h-[500px] sm:w-[500px] rounded-full bg-primary/5 blur-[100px]" />
-      </motion.div>
+      </div>
 
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808010_1px,transparent_1px),linear-gradient(to_bottom,#80808010_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
 
@@ -78,23 +74,16 @@ export function Hero() {
           >
             <div className="relative aspect-[4/5] rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-primary/5 to-teal-400/10 border border-border shadow-2xl flex items-center justify-center p-6 sm:p-8">
               <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.2)_50%,transparent_75%)] bg-[length:250%_250%] animate-[gradient_8s_linear_infinite]" />
-              <motion.img
+              <img
                 src={VerticalLogo} alt="شعار معهد الفيحاء التعليمي"
                 className="relative z-10 w-3/4 object-contain drop-shadow-xl rounded-xl"
-                initial={{ y: 20 }} animate={{ y: [20, -10, 20] }}
-                transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
               />
-              <motion.div
-                className="absolute top-8 right-8 h-14 w-14 rounded-2xl bg-teal-400/20 backdrop-blur-md border border-teal-400/30 flex items-center justify-center shadow-lg"
-                animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 20, ease: "linear" }}>
+              <div className="absolute top-8 right-8 h-14 w-14 rounded-2xl bg-teal-400/20 backdrop-blur-md border border-teal-400/30 flex items-center justify-center shadow-lg">
                 <div className="h-5 w-5 rounded-full bg-teal-500/60" />
-              </motion.div>
-              <motion.div
-                className="absolute bottom-16 left-6 h-16 w-16 rounded-full bg-primary/20 backdrop-blur-md border border-primary/30 flex items-center justify-center shadow-lg"
-                animate={{ y: [0, -20, 0], scale: [1, 1.1, 1] }}
-                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}>
+              </div>
+              <div className="absolute bottom-16 left-6 h-16 w-16 rounded-full bg-primary/20 backdrop-blur-md border border-primary/30 flex items-center justify-center shadow-lg">
                 <div className="h-7 w-7 rounded-sm bg-primary/60 rotate-45" />
-              </motion.div>
+              </div>
             </div>
 
             {/* Buttons below image — shown on mobile/tablet; hidden on desktop (shown in left col) */}
