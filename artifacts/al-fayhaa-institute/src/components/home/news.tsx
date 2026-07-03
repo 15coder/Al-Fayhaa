@@ -40,10 +40,10 @@ export function News() {
           {news.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.12 }}
+              initial={{ opacity: 0, y: 80, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.7, delay: index * 0.12, ease: "easeOut" }}
               whileHover={{ y: -6 }}
             >
               <Card className="h-full border-border/70 hover:border-secondary/40 transition-colors shadow-sm hover:shadow-lg overflow-hidden group">

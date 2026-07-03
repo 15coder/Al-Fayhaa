@@ -21,20 +21,19 @@ export function Header() {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 px-3 pt-3">
+    <div className="fixed top-0 left-0 right-0 z-50 px-4 pt-3">
       <div
-        className={`rounded-2xl border px-4 h-14 flex items-center justify-between transition-all duration-300 ${
+        className={`rounded-[2rem] border px-5 h-14 flex items-center justify-between transition-all duration-300 ${
           scrolled
-            ? "bg-background/60 backdrop-blur-xl shadow-lg border-border/50"
-            : "bg-background/30 backdrop-blur-sm shadow-sm border-border/20"
+            ? "bg-background/65 backdrop-blur-2xl shadow-xl border-border/50"
+            : "bg-background/25 backdrop-blur-md shadow-sm border-border/15"
         }`}
       >
-
         {/* Left: hamburger */}
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="lg:hidden flex h-9 w-9 items-center justify-center rounded-xl text-foreground/60 hover:text-primary hover:bg-muted transition-colors"
+          className="lg:hidden flex h-9 w-9 items-center justify-center rounded-2xl text-foreground/60 hover:text-primary hover:bg-muted transition-colors"
           aria-label="القائمة"
           aria-expanded={open}
         >
@@ -61,11 +60,11 @@ export function Header() {
       </div>
 
       {/* Mobile dropdown */}
-      <div className={`lg:hidden overflow-hidden transition-[max-height,opacity] duration-300 ease-in-out ${open ? "max-h-80 opacity-100" : "max-h-0 opacity-0"}`}>
-        <div className="mt-1.5 rounded-2xl bg-background/80 backdrop-blur-xl shadow-md border border-border/40 px-4 py-3 flex flex-col gap-0.5">
+      <div className={`lg:hidden overflow-hidden transition-[max-height,opacity] duration-300 ease-in-out ${open ? "max-h-72 opacity-100" : "max-h-0 opacity-0"}`}>
+        <div className="mt-2 rounded-[1.5rem] bg-background/85 backdrop-blur-2xl shadow-xl border border-border/40 px-4 py-3 flex flex-col gap-0.5">
           {navLinks.map((l) => (
             <a key={l.href} href={l.href} onClick={() => setOpen(false)}
-              className="rounded-xl px-4 py-3 text-base font-medium text-foreground/75 hover:bg-muted hover:text-primary transition-colors">
+              className="rounded-2xl px-4 py-3 text-base font-medium text-foreground/75 hover:bg-muted hover:text-primary transition-colors">
               {l.label}
             </a>
           ))}

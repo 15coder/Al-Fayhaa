@@ -58,10 +58,10 @@ export function Tracks() {
           {tracks.map((track, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: track.delay }}
+              initial={{ opacity: 0, y: 80, scale: 0.93 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.7, delay: track.delay, ease: "easeOut" }}
               className={index === 2 ? "sm:col-span-2 md:col-span-1" : ""}
             >
               <Card className={`h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-2 ${track.border}`}>
