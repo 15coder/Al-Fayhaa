@@ -69,11 +69,6 @@ export function Header() {
               {l.label}
             </a>
           ))}
-          <a href="https://wa.me/963934311019" target="_blank" rel="noopener noreferrer"
-            onClick={() => setOpen(false)}
-            className="mt-2 rounded-xl bg-primary text-primary-foreground text-base font-bold py-3 text-center">
-            سجل الآن
-          </a>
         </div>
       </div>
     </div>

@@ -6,7 +6,6 @@ import { Tracks } from "@/components/home/tracks";
 import { Teachers } from "@/components/home/teachers";
 import { ExamDownloads } from "@/components/home/exam-downloads";
 import { Location } from "@/components/home/location";
-import { Cta } from "@/components/home/cta";
 
 export default function Home() {
   return (
@@ -24,7 +23,6 @@ export default function Home() {
         <Teachers />
         <ExamDownloads />
         <Location />
-        <Cta />
       </main>
       <Footer />
     </div>
