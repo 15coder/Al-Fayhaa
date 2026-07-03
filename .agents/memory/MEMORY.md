@@ -1,0 +1,1 @@
+- [Custom font from sytra.site API](custom-font-sytra.md) — how to fetch and self-host a custom Arabic font when a user gives a sytra.site font search URL.
