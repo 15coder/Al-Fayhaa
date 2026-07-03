@@ -22,6 +22,8 @@ export function ExamDownloads() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, ease: "easeOut" }}
+          whileTap={{ scale: 1.02, boxShadow: "0 0 40px hsl(var(--primary)/0.25)" }}
+          style={{ cursor: "pointer" }}
           className="max-w-4xl mx-auto bg-card border border-border rounded-[2rem] sm:rounded-[2.5rem] shadow-xl p-7 sm:p-10 md:p-14 text-center flex flex-col items-center gap-5 sm:gap-6"
         >
           <div className="h-16 w-16 sm:h-20 sm:w-20 rounded-2xl bg-secondary/10 text-secondary flex items-center justify-center">

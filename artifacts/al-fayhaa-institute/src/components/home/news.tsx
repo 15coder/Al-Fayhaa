@@ -45,6 +45,8 @@ export function News() {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.7, delay: index * 0.12, ease: "easeOut" }}
               whileHover={{ y: -6 }}
+              whileTap={{ scale: 1.03 }}
+              style={{ cursor: "pointer" }}
             >
               <Card className="h-full border-border/70 hover:border-secondary/40 transition-colors shadow-sm hover:shadow-lg overflow-hidden group">
                 <div className="h-1.5 w-full bg-gradient-to-l from-secondary to-primary scale-x-0 group-hover:scale-x-100 origin-right transition-transform duration-500" />

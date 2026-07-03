@@ -62,9 +62,12 @@ export function Tracks() {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.7, delay: track.delay, ease: "easeOut" }}
+              whileTap={{ scale: 1.04 }}
+              whileHover={{ y: -6 }}
+              style={{ cursor: "pointer" }}
               className={index === 2 ? "sm:col-span-2 md:col-span-1" : ""}
             >
-              <Card className={`h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-2 ${track.border}`}>
+              <Card className={`h-full transition-all duration-300 hover:shadow-2xl border-2 ${track.border}`}>
                 <CardHeader className="text-center pb-2">
                   <motion.div
                     whileHover={{ rotate: [0, -8, 8, 0] }}

@@ -125,8 +125,10 @@ function TeacherCard({ teacher }: { teacher: { subject: string; name: string } }
     <motion.div
       variants={itemVariants}
       whileHover={{ y: -4, scale: 1.02 }}
+      whileTap={{ scale: 1.05, boxShadow: "0 0 24px hsl(var(--primary)/0.35)" }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className={`group relative overflow-hidden rounded-2xl border border-border shadow-sm hover:shadow-md transition-shadow ${d.bg} bg-card`}
+      style={{ cursor: "pointer" }}
+      className={`group relative overflow-hidden rounded-2xl border border-border shadow-sm hover:shadow-lg transition-shadow ${d.bg} bg-card`}
     >
       {/* Full-card animated symbol background */}
       <motion.div
