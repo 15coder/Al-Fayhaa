@@ -1,6 +1,22 @@
 import { motion } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
+const subjectDecorators: Record<string, { symbol: string; color: string }> = {
+  "رياضيات":          { symbol: "π",  color: "text-blue-400" },
+  "عربي":             { symbol: "ع",  color: "text-amber-400" },
+  "علوم":             { symbol: "⚗",  color: "text-emerald-400" },
+  "فيزياء":           { symbol: "⚡", color: "text-yellow-400" },
+  "فيزياء + كيمياء":  { symbol: "⚡", color: "text-yellow-400" },
+  "كيمياء":           { symbol: "⚗",  color: "text-purple-400" },
+  "جغرافيا":          { symbol: "🌍", color: "text-teal-400" },
+  "تاريخ":            { symbol: "📜", color: "text-orange-400" },
+  "لغة إنكليزية":     { symbol: "A",  color: "text-sky-400" },
+  "لغة فرنسية":       { symbol: "⚜",  color: "text-indigo-400" },
+  "ديانة":            { symbol: "☽",  color: "text-green-400" },
+  "علم الأحياء":      { symbol: "🧬", color: "text-lime-400" },
+  "فلسفة":            { symbol: "💡", color: "text-rose-400" },
+};
+
 const teachersData = {
   ninth: [
     { subject: "رياضيات", name: "جاسم الجاسم" },
@@ -38,9 +54,7 @@ const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.08,
-    },
+    transition: { staggerChildren: 0.08 },
   },
 };
 
@@ -52,7 +66,6 @@ const itemVariants = {
 export function Teachers() {
   return (
     <section id="teachers" className="py-24 sm:py-32 md:py-40 bg-muted/40 relative overflow-hidden">
-      {/* Decorative blobs */}
       <div className="absolute left-0 top-1/4 h-64 w-64 -translate-x-1/2 rounded-full bg-secondary/10 blur-3xl" />
       <div className="absolute right-0 bottom-1/4 h-64 w-64 translate-x-1/2 rounded-full bg-primary/5 blur-3xl" />
 
@@ -86,62 +99,63 @@ export function Teachers() {
             </TabsList>
           </div>
 
-          <TabsContent value="ninth" className="mt-0 outline-none">
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
-            >
-              {teachersData.ninth.map((teacher, i) => (
-                <TeacherCard key={i} teacher={teacher} />
-              ))}
-            </motion.div>
-          </TabsContent>
-
-          <TabsContent value="scientific" className="mt-0 outline-none">
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
-            >
-              {teachersData.scientific.map((teacher, i) => (
-                <TeacherCard key={i} teacher={teacher} />
-              ))}
-            </motion.div>
-          </TabsContent>
-
-          <TabsContent value="literary" className="mt-0 outline-none">
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
-            >
-              {teachersData.literary.map((teacher, i) => (
-                <TeacherCard key={i} teacher={teacher} />
-              ))}
-            </motion.div>
-          </TabsContent>
+          {(["ninth", "scientific", "literary"] as const).map((tab) => (
+            <TabsContent key={tab} value={tab} className="mt-0 outline-none">
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+              >
+                {teachersData[tab].map((teacher, i) => (
+                  <TeacherCard key={i} teacher={teacher} />
+                ))}
+              </motion.div>
+            </TabsContent>
+          ))}
         </Tabs>
       </div>
     </section>
   );
 }
 
-function TeacherCard({ teacher }: { teacher: { subject: string, name: string } }) {
+function TeacherCard({ teacher }: { teacher: { subject: string; name: string } }) {
+  const decorator = subjectDecorators[teacher.subject] ?? { symbol: "★", color: "text-secondary" };
+
   return (
     <motion.div
       variants={itemVariants}
-      whileHover={{ y: -4 }}
-      className="group flex flex-col bg-card border border-border p-5 sm:p-6 rounded-2xl shadow-sm hover:shadow-md transition-all hover:border-secondary/30 relative overflow-hidden"
+      whileHover={{ y: -5 }}
+      className="group flex flex-col bg-card border border-border p-5 sm:p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all hover:border-secondary/40 relative overflow-hidden"
     >
-      <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-r from-transparent via-secondary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-      <span className="text-xs sm:text-sm font-semibold text-secondary mb-2 uppercase tracking-wider">{teacher.subject}</span>
+      {/* Top accent line on hover */}
+      <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-r from-transparent via-secondary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+      {/* Decorative subject symbol — large, behind content */}
+      <motion.span
+        aria-hidden="true"
+        className={`pointer-events-none select-none absolute -bottom-3 -left-2 text-[6rem] leading-none font-black opacity-[0.07] group-hover:opacity-[0.13] transition-opacity duration-500 ${decorator.color}`}
+        animate={{ rotate: [0, 6, -4, 0], scale: [1, 1.06, 0.97, 1] }}
+        transition={{ repeat: Infinity, duration: 7, ease: "easeInOut" }}
+      >
+        {decorator.symbol}
+      </motion.span>
+
+      {/* Small floating badge top-left */}
+      <motion.span
+        aria-hidden="true"
+        className={`absolute top-4 left-4 text-lg opacity-30 group-hover:opacity-60 transition-opacity duration-300 ${decorator.color}`}
+        animate={{ y: [0, -4, 0] }}
+        transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut" }}
+      >
+        {decorator.symbol}
+      </motion.span>
+
+      {/* Card content */}
+      <span className="text-xs sm:text-sm font-semibold text-secondary mb-2 uppercase tracking-wider">
+        {teacher.subject}
+      </span>
       <h3 className="text-lg sm:text-xl font-bold text-foreground">الأستاذ {teacher.name}</h3>
     </motion.div>
   );
