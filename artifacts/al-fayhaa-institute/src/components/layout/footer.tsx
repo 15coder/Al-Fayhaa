@@ -23,11 +23,11 @@ export function Footer() {
           href="https://needaa.netlify.app"
           target="_blank"
           rel="noopener noreferrer"
-          className="group w-full max-w-xs rounded-2xl border-2 border-secondary/40 bg-secondary/10 px-5 py-4 flex flex-col items-center gap-1 hover:bg-secondary/20 hover:border-secondary/70 transition-all duration-300"
+          className="group inline-flex items-center gap-2 rounded-full border border-secondary/40 bg-secondary/10 px-4 py-2 hover:bg-secondary/20 hover:border-secondary/70 transition-all duration-300"
         >
-          <p className="text-xs text-primary-foreground/60 font-medium">تصميم وبرمجة</p>
-          <p className="text-base font-extrabold text-white tracking-wide">نداء الرحمن عبود</p>
-          <span className="mt-1 inline-flex items-center gap-1.5 text-xs font-semibold text-secondary group-hover:gap-2.5 transition-all">
+          <span className="text-xs text-primary-foreground/60 font-medium">تصميم وبرمجة</span>
+          <span className="text-sm font-extrabold text-white">نداء الرحمن عبود</span>
+          <span className="inline-flex items-center gap-1 text-xs font-semibold text-secondary">
             انقر هنا لرؤية الموقع الشخصي
             <ExternalLink className="h-3 w-3" />
           </span>
