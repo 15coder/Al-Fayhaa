@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { Hero } from "@/components/home/hero";
@@ -9,12 +10,24 @@ import { Cta } from "@/components/home/cta";
 
 export default function Home() {
   return (
-    <div className="relative flex min-h-screen flex-col font-sans overflow-x-hidden">
-      {/* Unified page-level background */}
-      <div className="fixed inset-0 -z-10 bg-background">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_60%_at_15%_10%,hsl(var(--primary)/0.07),transparent)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_85%_80%,hsl(var(--secondary)/0.07),transparent)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_50%,hsl(var(--primary)/0.03),transparent)]" />
+    <div className="dark relative flex min-h-screen flex-col font-sans overflow-x-hidden">
+      {/* Page-wide background — matches CTA dark navy style */}
+      <div className="fixed inset-0 -z-10 bg-primary">
+        <motion.div
+          className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,var(--color-secondary)_0%,transparent_50%)]"
+          animate={{ opacity: [0.25, 0.45, 0.25] }}
+          transition={{ repeat: Infinity, duration: 7, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,var(--color-secondary)_0%,transparent_40%)]"
+          animate={{ opacity: [0.15, 0.32, 0.15] }}
+          transition={{ repeat: Infinity, duration: 9, ease: "easeInOut", delay: 2 }}
+        />
+        <motion.div
+          className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,var(--color-secondary)_0%,transparent_35%)]"
+          animate={{ opacity: [0.06, 0.14, 0.06] }}
+          transition={{ repeat: Infinity, duration: 12, ease: "easeInOut", delay: 4 }}
+        />
       </div>
 
       <Header />

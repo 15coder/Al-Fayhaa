@@ -20,7 +20,7 @@ export function News() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-2xl sm:text-3xl font-bold text-primary md:text-4xl mb-3 sm:mb-4"
+            className="text-2xl sm:text-3xl font-bold text-primary dark:text-white md:text-4xl mb-3 sm:mb-4"
           >
             آخر الأخبار
           </motion.h2>
