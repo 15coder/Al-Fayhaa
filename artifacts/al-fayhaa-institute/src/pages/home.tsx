@@ -6,10 +6,12 @@ import { Tracks } from "@/components/home/tracks";
 import { Teachers } from "@/components/home/teachers";
 import { ExamDownloads } from "@/components/home/exam-downloads";
 import { Location } from "@/components/home/location";
+import { BackgroundMotifs } from "@/components/layout/background-motifs";
 
 export default function Home() {
   return (
     <div className="relative flex min-h-screen flex-col font-sans overflow-x-hidden">
+      <BackgroundMotifs />
       <div className="fixed inset-0 -z-10 bg-background">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_60%_at_15%_10%,hsl(var(--primary)/0.06),transparent)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_85%_80%,hsl(167_100%_70%/0.05),transparent)]" />
