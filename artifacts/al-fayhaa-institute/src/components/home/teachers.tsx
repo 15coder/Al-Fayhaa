@@ -39,7 +39,7 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.08,
     },
   },
 };
@@ -51,48 +51,48 @@ const itemVariants = {
 
 export function Teachers() {
   return (
-    <section id="teachers" className="py-24 bg-background relative overflow-hidden">
+    <section id="teachers" className="py-16 sm:py-20 md:py-24 bg-background relative overflow-hidden">
       {/* Decorative blobs */}
       <div className="absolute left-0 top-1/4 h-64 w-64 -translate-x-1/2 rounded-full bg-secondary/10 blur-3xl" />
       <div className="absolute right-0 bottom-1/4 h-64 w-64 translate-x-1/2 rounded-full bg-primary/5 blur-3xl" />
 
       <div className="container relative mx-auto px-4">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <motion.h2 
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14 md:mb-16">
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl font-bold text-primary md:text-4xl mb-4"
+            className="text-2xl sm:text-3xl font-bold text-primary md:text-4xl mb-3 sm:mb-4 dark:text-white"
           >
             نخبة الكادر التدريسي
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-muted-foreground text-lg"
+            className="text-muted-foreground text-base sm:text-lg"
           >
             مجموعة من أكفأ الأساتذة وأصحاب الخبرة الطويلة، يجتمعون لهدف واحد: تفوق أبنائنا.
           </motion.p>
         </div>
 
         <Tabs defaultValue="scientific" className="w-full max-w-5xl mx-auto">
-          <div className="flex justify-center mb-12">
-            <TabsList className="bg-muted p-1 rounded-xl h-auto">
-              <TabsTrigger value="ninth" className="text-base py-3 px-6 rounded-lg data-[state=active]:bg-white data-[state=active]:text-primary data-[state=active]:shadow-sm">الصف التاسع</TabsTrigger>
-              <TabsTrigger value="scientific" className="text-base py-3 px-6 rounded-lg data-[state=active]:bg-white data-[state=active]:text-primary data-[state=active]:shadow-sm">الثالث الثانوي العلمي</TabsTrigger>
-              <TabsTrigger value="literary" className="text-base py-3 px-6 rounded-lg data-[state=active]:bg-white data-[state=active]:text-primary data-[state=active]:shadow-sm">الثالث الثانوي الأدبي</TabsTrigger>
+          <div className="flex justify-center mb-8 sm:mb-12 -mx-4 px-4 overflow-x-auto">
+            <TabsList className="bg-muted p-1 rounded-xl h-auto min-w-max">
+              <TabsTrigger value="ninth" className="text-sm sm:text-base py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg data-[state=active]:bg-white data-[state=active]:text-primary data-[state=active]:shadow-sm">الصف التاسع</TabsTrigger>
+              <TabsTrigger value="scientific" className="text-sm sm:text-base py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg data-[state=active]:bg-white data-[state=active]:text-primary data-[state=active]:shadow-sm">الثالث الثانوي العلمي</TabsTrigger>
+              <TabsTrigger value="literary" className="text-sm sm:text-base py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg data-[state=active]:bg-white data-[state=active]:text-primary data-[state=active]:shadow-sm">الثالث الثانوي الأدبي</TabsTrigger>
             </TabsList>
           </div>
 
           <TabsContent value="ninth" className="mt-0 outline-none">
-            <motion.div 
+            <motion.div
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
             >
               {teachersData.ninth.map((teacher, i) => (
                 <TeacherCard key={i} teacher={teacher} />
@@ -101,12 +101,12 @@ export function Teachers() {
           </TabsContent>
 
           <TabsContent value="scientific" className="mt-0 outline-none">
-            <motion.div 
+            <motion.div
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
             >
               {teachersData.scientific.map((teacher, i) => (
                 <TeacherCard key={i} teacher={teacher} />
@@ -115,12 +115,12 @@ export function Teachers() {
           </TabsContent>
 
           <TabsContent value="literary" className="mt-0 outline-none">
-            <motion.div 
+            <motion.div
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
             >
               {teachersData.literary.map((teacher, i) => (
                 <TeacherCard key={i} teacher={teacher} />
@@ -135,10 +135,14 @@ export function Teachers() {
 
 function TeacherCard({ teacher }: { teacher: { subject: string, name: string } }) {
   return (
-    <motion.div variants={itemVariants} className="group flex flex-col bg-card border border-border p-6 rounded-2xl shadow-sm hover:shadow-md transition-all hover:border-secondary/30 relative overflow-hidden">
+    <motion.div
+      variants={itemVariants}
+      whileHover={{ y: -4 }}
+      className="group flex flex-col bg-card border border-border p-5 sm:p-6 rounded-2xl shadow-sm hover:shadow-md transition-all hover:border-secondary/30 relative overflow-hidden"
+    >
       <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-r from-transparent via-secondary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-      <span className="text-sm font-semibold text-secondary mb-2 uppercase tracking-wider">{teacher.subject}</span>
-      <h3 className="text-xl font-bold text-foreground">الأستاذ {teacher.name}</h3>
+      <span className="text-xs sm:text-sm font-semibold text-secondary mb-2 uppercase tracking-wider">{teacher.subject}</span>
+      <h3 className="text-lg sm:text-xl font-bold text-foreground">الأستاذ {teacher.name}</h3>
     </motion.div>
   );
 }

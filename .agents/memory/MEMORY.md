@@ -1,1 +1,2 @@
 - [Custom font from sytra.site API](custom-font-sytra.md) — how to fetch and self-host a custom Arabic font when a user gives a sytra.site font search URL.
+- [Extracting an icon-only logo mark](logo-mark-extraction.md) — crop + remove-background a vertical/full logo to get a transparent mark for favicons/watermarks, keeping the original full logo untouched elsewhere.

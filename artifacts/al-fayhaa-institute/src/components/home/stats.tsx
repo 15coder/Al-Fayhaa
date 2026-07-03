@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { GraduationCap, Users, Trophy, Target } from "lucide-react";
+import LogoMark from "@/assets/logo-mark.png";
 
 const stats = [
   {
@@ -30,7 +31,7 @@ const stats = [
 
 export function Stats() {
   return (
-    <section className="bg-primary py-16 relative overflow-hidden">
+    <section className="bg-primary py-12 sm:py-16 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
@@ -43,8 +44,17 @@ export function Stats() {
         </svg>
       </div>
 
+      <motion.img
+        src={LogoMark}
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute -left-10 top-1/2 -translate-y-1/2 h-56 w-56 opacity-[0.07]"
+        animate={{ y: ["-52%", "-48%", "-52%"] }}
+        transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+      />
+
       <div className="container relative mx-auto px-4">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-primary-foreground">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-12 text-primary-foreground">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -52,14 +62,18 @@ export function Stats() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: stat.delay }}
-              className="flex flex-col items-center text-center gap-4"
+              whileHover={{ y: -4 }}
+              className="flex flex-col items-center text-center gap-3 sm:gap-4"
             >
-              <div className="h-16 w-16 rounded-2xl bg-white/10 flex items-center justify-center backdrop-blur-sm border border-white/20">
-                <stat.icon className="h-8 w-8 text-secondary" />
-              </div>
+              <motion.div
+                whileHover={{ rotate: 8, scale: 1.08 }}
+                className="h-14 w-14 sm:h-16 sm:w-16 rounded-2xl bg-white/10 flex items-center justify-center backdrop-blur-sm border border-white/20"
+              >
+                <stat.icon className="h-7 w-7 sm:h-8 sm:w-8 text-secondary" />
+              </motion.div>
               <div>
-                <h3 className="text-4xl md:text-5xl font-extrabold text-white mb-2">{stat.value}</h3>
-                <p className="text-sm md:text-base text-primary-foreground/80 font-medium">{stat.label}</p>
+                <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-1 sm:mb-2">{stat.value}</h3>
+                <p className="text-xs sm:text-sm md:text-base text-primary-foreground/80 font-medium">{stat.label}</p>
               </div>
             </motion.div>
           ))}

@@ -15,8 +15,8 @@ const tracks = [
     title: "الثالث الثانوي العلمي",
     description: "تحضير شامل لاجتياز البكالوريا العلمية بتفوق، مع شرح معمق لمواد الفيزياء والكيمياء والرياضيات والعلوم.",
     icon: Atom,
-    color: "bg-primary/10 text-primary",
-    border: "border-primary/20",
+    color: "bg-primary/10 text-primary dark:bg-secondary/10 dark:text-secondary",
+    border: "border-primary/20 dark:border-secondary/20",
     delay: 0.2
   },
   {
@@ -31,29 +31,29 @@ const tracks = [
 
 export function Tracks() {
   return (
-    <section id="tracks" className="py-24 bg-muted/30 relative">
+    <section id="tracks" className="py-16 sm:py-20 md:py-24 bg-muted/30 relative">
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <motion.h2 
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14 md:mb-16">
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl font-bold text-primary md:text-4xl mb-4"
+            className="text-2xl sm:text-3xl font-bold text-primary md:text-4xl mb-3 sm:mb-4 dark:text-white"
           >
             مساراتنا التعليمية
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-muted-foreground text-lg"
+            className="text-muted-foreground text-base sm:text-lg"
           >
             برامج مخصصة تناسب احتياجات كل مرحلة، صُممت بعناية لتوجيه الطالب نحو أقصى درجات التفوق
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
           {tracks.map((track, index) => (
             <motion.div
               key={index}
@@ -61,16 +61,21 @@ export function Tracks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: track.delay }}
+              className={index === 2 ? "sm:col-span-2 md:col-span-1" : ""}
             >
               <Card className={`h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-2 ${track.border}`}>
                 <CardHeader className="text-center pb-2">
-                  <div className={`mx-auto h-20 w-20 rounded-2xl flex items-center justify-center mb-6 ${track.color}`}>
-                    <track.icon className="h-10 w-10" />
-                  </div>
-                  <CardTitle className="text-2xl font-bold">{track.title}</CardTitle>
+                  <motion.div
+                    whileHover={{ rotate: [0, -8, 8, 0] }}
+                    transition={{ duration: 0.5 }}
+                    className={`mx-auto h-16 w-16 sm:h-20 sm:w-20 rounded-2xl flex items-center justify-center mb-4 sm:mb-6 ${track.color}`}
+                  >
+                    <track.icon className="h-8 w-8 sm:h-10 sm:w-10" />
+                  </motion.div>
+                  <CardTitle className="text-xl sm:text-2xl font-bold">{track.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="text-center">
-                  <CardDescription className="text-base text-muted-foreground leading-relaxed">
+                  <CardDescription className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     {track.description}
                   </CardDescription>
                 </CardContent>
