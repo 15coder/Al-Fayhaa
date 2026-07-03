@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "معهد الفيحاء التعليمي"
+version = "1.0.0"
+id = "artifacts/al-fayhaa-institute"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21401
+
+[services.development]
+run = "pnpm --filter @workspace/al-fayhaa-institute run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/al-fayhaa-institute", "run", "build" ]
+publicDir = "artifacts/al-fayhaa-institute/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21401"
+BASE_PATH = "/"
