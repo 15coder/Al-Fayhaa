@@ -3,7 +3,7 @@ import { MapPin, ExternalLink } from "lucide-react";
 
 export function Location() {
   return (
-    <section id="location" className="py-16 sm:py-24 md:py-32 bg-muted/40">
+    <section id="location" className="py-24 sm:py-32 md:py-40 bg-transparent">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
           <motion.h2
@@ -21,7 +21,7 @@ export function Location() {
             transition={{ delay: 0.1 }}
             className="text-muted-foreground text-base sm:text-lg"
           >
-            يسعدنا استقبالكم في مقر المعهد، تفضلوا بزيارتنا أو تصفح الموقع مباشرة على الخريطة
+            يسعدنا استقبالكم في مقر المعهد، تفضلوا بزيارتنا أو افتح الموقع على الخريطة
           </motion.p>
         </div>
 
@@ -34,19 +34,19 @@ export function Location() {
         >
           <div className="flex flex-col sm:flex-row items-center justify-between gap-5 p-6 sm:p-8">
             <div className="flex items-center gap-4 text-center sm:text-right flex-col sm:flex-row">
-              <div className="h-14 w-14 shrink-0 rounded-2xl bg-secondary/10 text-secondary flex items-center justify-center">
+              <div className="h-14 w-14 shrink-0 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center">
                 <MapPin className="h-7 w-7" />
               </div>
               <div>
                 <h3 className="font-bold text-lg text-foreground">عنوان المعهد</h3>
-                <p className="text-muted-foreground text-sm sm:text-base">سوريا - الرقة - معدان جديد</p>
+                <p className="text-muted-foreground text-sm sm:text-base">سوريا — الرقة — معدان جديد</p>
               </div>
             </div>
             <a
               href="https://maps.app.goo.gl/LzGA8pXZ8ArSW1BB6?g_st=ac"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-secondary/40 bg-secondary/10 px-5 py-2.5 text-sm font-bold text-secondary hover:bg-secondary/20 transition-colors shrink-0"
+              className="inline-flex items-center gap-2 rounded-full border border-teal-500/40 bg-teal-50 px-5 py-2.5 text-sm font-bold text-teal-700 hover:bg-teal-100 transition-colors shrink-0"
             >
               فتح في خرائط جوجل
               <ExternalLink className="h-4 w-4" />
@@ -67,11 +67,11 @@ export function Location() {
               height="100%"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="absolute inset-0 h-full w-full grayscale-[15%] contrast-[1.05] transition-transform duration-500 pointer-events-none group-hover:scale-105"
+              className="absolute inset-0 h-full w-full pointer-events-none"
             />
             <div className="absolute inset-0 bg-transparent group-hover:bg-black/5 transition-colors" />
             <span className="absolute bottom-4 left-1/2 -translate-x-1/2 inline-flex items-center gap-2 rounded-full bg-background/95 backdrop-blur px-4 py-2 text-xs sm:text-sm font-bold text-primary shadow-lg border border-border">
-              <MapPin className="h-4 w-4 text-secondary" />
+              <MapPin className="h-4 w-4 text-teal-600" />
               اضغط لفتح الموقع في خرائط جوجل
             </span>
           </a>

@@ -5,7 +5,7 @@ import LogoMark from "@/assets/logo-mark.png";
 
 export function Cta() {
   return (
-    <section className="py-16 sm:py-24 md:py-32 relative overflow-hidden">
+    <section className="py-24 sm:py-32 md:py-40 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-primary" />
       <motion.div
