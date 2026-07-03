@@ -5,7 +5,7 @@ import LogoMark from "@/assets/logo-mark.png";
 
 export function ExamDownloads() {
   return (
-    <section id="exams" className="py-16 sm:py-20 md:py-24 bg-muted/30 relative overflow-hidden">
+    <section id="exams" className="py-20 sm:py-24 md:py-28 bg-muted/30 relative overflow-hidden">
       <motion.img
         src={LogoMark}
         alt=""

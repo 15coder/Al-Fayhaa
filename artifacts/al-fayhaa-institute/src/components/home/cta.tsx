@@ -5,7 +5,7 @@ import LogoMark from "@/assets/logo-mark.png";
 
 export function Cta() {
   return (
-    <section className="py-16 sm:py-20 md:py-24 relative overflow-hidden">
+    <section className="py-20 sm:py-24 md:py-28 relative overflow-hidden">
       {/* Complex Gradient Background */}
       <div className="absolute inset-0 bg-primary" />
       <motion.div

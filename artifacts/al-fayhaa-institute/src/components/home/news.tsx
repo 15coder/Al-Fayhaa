@@ -1,31 +1,19 @@
 import { motion } from "framer-motion";
-import { Calendar, Megaphone, Trophy, BookOpenCheck, ArrowLeft } from "lucide-react";
+import { Calendar, Megaphone, ArrowLeft } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const news = [
   {
     icon: Megaphone,
-    date: "١ تموز ٢٠٢٦",
-    title: "فتح باب التسجيل للعام الدراسي الجديد",
-    excerpt: "بدأ معهد الفيحاء التعليمي استقبال طلبات التسجيل لجميع المسارات (التاسع، البكالوريا العلمي والأدبي) مع مقاعد محدودة لضمان جودة التعليم.",
-  },
-  {
-    icon: Trophy,
-    date: "١٥ حزيران ٢٠٢٦",
-    title: "نتائج متميزة لطلاب المعهد في البكالوريا",
-    excerpt: "حقق عدد كبير من طلاب المعهد معدلات مرتفعة في امتحانات البكالوريا للعام الماضي، ليؤكدوا مجدداً أن التفوق نهج نتّبعه لا شعار.",
-  },
-  {
-    icon: BookOpenCheck,
-    date: "٢٠ أيار ٢٠٢٦",
-    title: "انطلاق الدورات التعزيزية المكثفة",
-    excerpt: "أطلق المعهد سلسلة من الدورات التعزيزية المكثفة في المواد الأساسية استعداداً للامتحانات النهائية بإشراف نخبة من الكادر التدريسي.",
+    date: "٣ تموز ٢٠٢٦",
+    title: "باب التسجيل مفتوح الآن — الدوام الفعلي يبدأ 2026/07/10",
+    excerpt: "بدأ معهد الفيحاء التعليمي استقبال طلبات التسجيل لجميع المسارات (التاسع، البكالوريا العلمي والأدبي)، على أن ينطلق الدوام الفعلي بتاريخ 2026/07/10. المقاعد محدودة لضمان جودة التعليم، فبادروا بالتسجيل.",
   },
 ];
 
 export function News() {
   return (
-    <section id="news" className="py-16 sm:py-20 md:py-24 bg-background relative overflow-hidden">
+    <section id="news" className="py-20 sm:py-24 md:py-28 bg-background relative overflow-hidden">
       <div className="container relative mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14 md:mb-16">
           <motion.h2
@@ -47,7 +35,7 @@ export function News() {
           </motion.p>
         </div>
 
-        <div className="grid gap-6 sm:gap-7 md:grid-cols-3">
+        <div className="max-w-2xl mx-auto">
           {news.map((item, index) => (
             <motion.div
               key={index}
@@ -59,7 +47,7 @@ export function News() {
             >
               <Card className="h-full border-border/70 hover:border-secondary/40 transition-colors shadow-sm hover:shadow-lg overflow-hidden group">
                 <div className="h-1.5 w-full bg-gradient-to-l from-secondary to-primary scale-x-0 group-hover:scale-x-100 origin-right transition-transform duration-500" />
-                <CardContent className="p-6 flex flex-col gap-4">
+                <CardContent className="p-6 sm:p-8 flex flex-col gap-4">
                   <div className="flex items-center justify-between">
                     <div className="h-12 w-12 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center">
                       <item.icon className="h-6 w-6" />

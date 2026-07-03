@@ -31,7 +31,7 @@ const stats = [
 
 export function Stats() {
   return (
-    <section className="bg-primary py-12 sm:py-16 relative overflow-hidden">
+    <section className="bg-primary py-16 sm:py-20 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg">

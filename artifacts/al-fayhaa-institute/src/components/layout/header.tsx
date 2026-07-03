@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { MessageCircle, Menu, X } from "lucide-react";
 import HorizontalLogo from "@assets/20260703_055249_1783047654677.jpg";
 
@@ -23,7 +22,7 @@ export function Header() {
           <img
             src={HorizontalLogo}
             alt="معهد الفيحاء التعليمي"
-            className="h-10 sm:h-12 w-auto object-contain rounded-sm dark:brightness-110"
+            className="h-11 sm:h-14 w-auto object-contain"
           />
         </Link>
 
@@ -32,7 +31,7 @@ export function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-foreground/80 transition-colors hover:text-primary dark:hover:text-secondary"
+              className="text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
             >
               {link.label}
             </a>
@@ -40,7 +39,6 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2 sm:gap-3">
-          <ThemeToggle />
           <Button asChild className="hidden sm:inline-flex rounded-full px-6 font-bold shadow-md shadow-primary/20 transition-all hover:-translate-y-1">
             <a href="https://wa.me/963934311019" target="_blank" rel="noopener noreferrer">
               <MessageCircle className="ml-2 h-5 w-5" />

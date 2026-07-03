@@ -31,7 +31,7 @@ const tracks = [
 
 export function Tracks() {
   return (
-    <section id="tracks" className="py-16 sm:py-20 md:py-24 bg-muted/30 relative">
+    <section id="tracks" className="py-20 sm:py-24 md:py-28 bg-muted/30 relative">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14 md:mb-16">
           <motion.h2

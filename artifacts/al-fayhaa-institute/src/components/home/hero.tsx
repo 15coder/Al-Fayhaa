@@ -5,7 +5,7 @@ import VerticalLogo from "@assets/20260703_055612_1783047654649.jpg";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-background pt-10 sm:pt-16 md:pt-24 lg:pt-28 pb-14 sm:pb-16 md:pb-24">
+    <section className="relative overflow-hidden bg-background pt-10 sm:pt-16 md:pt-24 lg:pt-28 pb-20 sm:pb-24 md:pb-28">
       {/* Abstract Background Shapes */}
       <motion.div
         className="absolute top-0 right-0 -translate-y-12 translate-x-1/3"
