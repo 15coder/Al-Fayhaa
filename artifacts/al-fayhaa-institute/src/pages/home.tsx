@@ -8,6 +8,7 @@ import { Tracks } from "@/components/home/tracks";
 import { Teachers } from "@/components/home/teachers";
 import { ExamDownloads } from "@/components/home/exam-downloads";
 import { Location } from "@/components/home/location";
+import LogoMark from "@/assets/logo-mark.png";
 
 export default function Home() {
   useEffect(() => {
@@ -22,6 +23,25 @@ export default function Home() {
         {/* Base gradient */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_60%_at_15%_10%,hsl(var(--primary)/0.08),transparent)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_85%_80%,hsl(167_100%_70%/0.06),transparent)]" />
+
+        {/* Full watermark — centered, fully visible */}
+        <motion.img
+          src={LogoMark}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none select-none absolute"
+          style={{
+            width: "min(70vw, 500px)",
+            height: "min(70vw, 500px)",
+            opacity: 0.06,
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            objectFit: "contain",
+          }}
+          animate={{ rotate: [0, 6, -4, 0], scale: [1, 1.04, 0.98, 1] }}
+          transition={{ repeat: Infinity, duration: 20, ease: "easeInOut" }}
+        />
 
         {/* Animated colour orbs */}
         <motion.div
@@ -41,12 +61,6 @@ export default function Home() {
           style={{ background: "hsl(250 80% 60% / 0.4)", top: "40%", left: "40%" }}
           animate={{ x: [0, 50, -70, 0], y: [0, -40, 60, 0] }}
           transition={{ repeat: Infinity, duration: 30, ease: "easeInOut", delay: 6 }}
-        />
-        <motion.div
-          className="absolute h-[350px] w-[350px] rounded-full blur-[80px] opacity-20"
-          style={{ background: "hsl(200 90% 60% / 0.35)", top: "65%", right: "5%" }}
-          animate={{ x: [0, -40, 60, 0], y: [0, 50, -40, 0] }}
-          transition={{ repeat: Infinity, duration: 22, ease: "easeInOut", delay: 10 }}
         />
       </div>
 

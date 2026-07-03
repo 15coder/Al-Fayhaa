@@ -5,7 +5,7 @@ import VerticalLogo from "@assets/20260703_055612_1783047654649.jpg";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-transparent min-h-screen flex items-center pt-8 sm:pt-14 pb-20 sm:pb-28" style={{ scrollSnapAlign: "start" }}>
+    <section className="relative overflow-hidden bg-transparent min-h-screen flex flex-col justify-center pt-6 pb-16" style={{ scrollSnapAlign: "start" }}>
       {/* Soft blobs */}
       <motion.div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3 pointer-events-none"
         animate={{ scale: [1, 1.15, 1], opacity: [0.6, 1, 0.6] }}
