@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Menu, X } from "lucide-react";
-import HorizontalLogo from "@assets/20260703_055249_1783047654677.jpg";
 
 const navLinks = [
   { href: "#about", label: "من نحن" },
@@ -17,13 +16,17 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-18 sm:h-20 items-center justify-between px-4 py-2">
-        <Link href="/" className="flex items-center gap-2 shrink-0">
+      <div className="container mx-auto flex h-16 sm:h-18 items-center justify-between px-4">
+        <Link href="/" className="flex items-center gap-2.5 shrink-0">
           <img
-            src={HorizontalLogo}
+            src="/favicon.png"
             alt="معهد الفيحاء التعليمي"
-            className="h-11 sm:h-14 w-auto object-contain"
+            className="h-9 w-9 sm:h-11 sm:w-11 rounded-xl object-cover shadow-sm"
           />
+          <span className="hidden sm:block text-sm font-bold text-primary leading-tight">
+            معهد الفيحاء<br />
+            <span className="text-secondary text-xs font-semibold">التعليمي</span>
+          </span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">

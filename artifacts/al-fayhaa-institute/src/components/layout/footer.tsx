@@ -1,71 +1,79 @@
 import { MapPin, MessageCircle, ExternalLink } from "lucide-react";
-import HorizontalLogo from "@assets/20260703_055249_1783047654677.jpg";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border/40 bg-primary text-primary-foreground py-12 md:py-16">
-      <div className="container mx-auto px-4">
-        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3 md:gap-12">
-          <div className="flex flex-col gap-4">
-            <div className="bg-white p-2 rounded-lg inline-block self-start">
-              <img
-                src={HorizontalLogo}
-                alt="معهد الفيحاء التعليمي"
-                className="h-10 w-auto object-contain"
-              />
+    <footer className="border-t border-border/40 bg-primary text-primary-foreground">
+      {/* Main compact row */}
+      <div className="container mx-auto px-4 py-6 sm:py-8">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-5 sm:gap-8">
+
+          {/* Logo + Name */}
+          <div className="flex items-center gap-3 shrink-0">
+            <img
+              src="/favicon.png"
+              alt="معهد الفيحاء التعليمي"
+              className="h-10 w-10 rounded-xl object-cover"
+            />
+            <div>
+              <p className="font-bold text-base leading-tight">معهد الفيحاء التعليمي</p>
+              <p className="text-primary-foreground/60 text-xs">تأسس عام 2018 — الرقة، سوريا</p>
             </div>
-            <p className="text-primary-foreground/80 max-w-sm text-sm leading-relaxed mt-2">
-              معهد الفيحاء التعليمي — تأسس عام 2018. خيارك الأول للنجاح والتفوق في الشهادتين الإعدادية والثانوية من خلال كادر تدريسي نخبوي وبرامج مكثفة.
-            </p>
           </div>
 
-          <div className="flex flex-col gap-4">
-            <h3 className="font-bold text-lg text-secondary">روابط سريعة</h3>
-            <nav className="flex flex-col gap-3">
-              <a href="#about" className="text-sm text-primary-foreground/70 transition-colors hover:text-secondary">عن المعهد</a>
-              <a href="#tracks" className="text-sm text-primary-foreground/70 transition-colors hover:text-secondary">المسارات التعليمية</a>
-              <a href="#teachers" className="text-sm text-primary-foreground/70 transition-colors hover:text-secondary">نخبة المدرسين</a>
-              <a href="#news" className="text-sm text-primary-foreground/70 transition-colors hover:text-secondary">آخر الأخبار</a>
-              <a href="#exams" className="text-sm text-primary-foreground/70 transition-colors hover:text-secondary">تحميل الأسئلة</a>
-            </nav>
-          </div>
+          {/* Quick links */}
+          <nav className="flex flex-wrap justify-center gap-x-5 gap-y-2">
+            {[
+              { href: "#tracks", label: "المسارات" },
+              { href: "#teachers", label: "المدرسون" },
+              { href: "#news", label: "الأخبار" },
+              { href: "#exams", label: "الأسئلة" },
+            ].map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-sm text-primary-foreground/70 hover:text-secondary transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
 
-          <div className="flex flex-col gap-4">
-            <h3 className="font-bold text-lg text-secondary">تواصل معنا</h3>
-            <div className="flex flex-col gap-3 text-sm text-primary-foreground/70">
-              <p>بإدارة الأستاذ: محمد نداء عبود</p>
-              <a
-                href="https://wa.me/963934311019"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-secondary hover:underline w-fit"
-              >
-                <MessageCircle className="h-4 w-4" />
-                <span dir="ltr">+963 934 311 019</span>
-              </a>
-              <a
-                href="https://maps.app.goo.gl/LzGA8pXZ8ArSW1BB6?g_st=ac"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-start gap-2 hover:text-secondary transition-colors w-fit"
-              >
-                <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-secondary" />
-                <span>سوريا - الرقة - معدان جديد</span>
-              </a>
-            </div>
+          {/* Contact */}
+          <div className="flex items-center gap-4 shrink-0">
+            <a
+              href="https://wa.me/963934311019"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm text-secondary hover:underline"
+            >
+              <MessageCircle className="h-4 w-4" />
+              <span dir="ltr">+963 934 311 019</span>
+            </a>
+            <a
+              href="https://maps.app.goo.gl/LzGA8pXZ8ArSW1BB6?g_st=ac"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm text-primary-foreground/70 hover:text-secondary transition-colors"
+            >
+              <MapPin className="h-4 w-4 text-secondary shrink-0" />
+              معدان جديد
+            </a>
           </div>
         </div>
+      </div>
 
-        <div className="mt-10 md:mt-12 border-t border-primary-foreground/10 pt-6 md:pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-right text-xs text-primary-foreground/50">
+      {/* Bottom bar */}
+      <div className="border-t border-primary-foreground/10">
+        <div className="container mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-1.5 text-xs text-primary-foreground/40">
           <p>جميع الحقوق محفوظة &copy; {new Date().getFullYear()} معهد الفيحاء التعليمي.</p>
           <a
             href="https://needaa.netlify.app"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-primary-foreground/60 hover:text-secondary transition-colors"
+            className="inline-flex items-center gap-1 hover:text-secondary transition-colors"
           >
             برمجة نداء الرحمن عبود
-            <ExternalLink className="h-3.5 w-3.5" />
+            <ExternalLink className="h-3 w-3" />
           </a>
         </div>
       </div>

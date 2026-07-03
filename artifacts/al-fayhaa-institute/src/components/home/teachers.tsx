@@ -1,20 +1,20 @@
 import { motion } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-const subjectDecorators: Record<string, { symbol: string; color: string }> = {
-  "رياضيات":          { symbol: "π",  color: "text-blue-400" },
-  "عربي":             { symbol: "ع",  color: "text-amber-400" },
-  "علوم":             { symbol: "⚗",  color: "text-emerald-400" },
-  "فيزياء":           { symbol: "⚡", color: "text-yellow-400" },
-  "فيزياء + كيمياء":  { symbol: "⚡", color: "text-yellow-400" },
-  "كيمياء":           { symbol: "⚗",  color: "text-purple-400" },
-  "جغرافيا":          { symbol: "🌍", color: "text-teal-400" },
-  "تاريخ":            { symbol: "📜", color: "text-orange-400" },
-  "لغة إنكليزية":     { symbol: "A",  color: "text-sky-400" },
-  "لغة فرنسية":       { symbol: "⚜",  color: "text-indigo-400" },
-  "ديانة":            { symbol: "☽",  color: "text-green-400" },
-  "علم الأحياء":      { symbol: "🧬", color: "text-lime-400" },
-  "فلسفة":            { symbol: "💡", color: "text-rose-400" },
+const subjectDecorators: Record<string, { symbol: string; color: string; bg: string }> = {
+  "رياضيات":          { symbol: "π",  color: "text-blue-400",   bg: "bg-blue-500/8" },
+  "عربي":             { symbol: "ع",  color: "text-amber-400",  bg: "bg-amber-500/8" },
+  "علوم":             { symbol: "⚗",  color: "text-emerald-400",bg: "bg-emerald-500/8" },
+  "فيزياء":           { symbol: "⚡", color: "text-yellow-400", bg: "bg-yellow-500/8" },
+  "فيزياء + كيمياء":  { symbol: "⚡", color: "text-yellow-400", bg: "bg-yellow-500/8" },
+  "كيمياء":           { symbol: "⚗",  color: "text-purple-400", bg: "bg-purple-500/8" },
+  "جغرافيا":          { symbol: "🌍", color: "text-teal-400",   bg: "bg-teal-500/8" },
+  "تاريخ":            { symbol: "📜", color: "text-orange-400", bg: "bg-orange-500/8" },
+  "لغة إنكليزية":     { symbol: "A",  color: "text-sky-400",    bg: "bg-sky-500/8" },
+  "لغة فرنسية":       { symbol: "⚜",  color: "text-indigo-400", bg: "bg-indigo-500/8" },
+  "ديانة":            { symbol: "☽",  color: "text-green-400",  bg: "bg-green-500/8" },
+  "علم الأحياء":      { symbol: "🧬", color: "text-lime-400",   bg: "bg-lime-500/8" },
+  "فلسفة":            { symbol: "💡", color: "text-rose-400",   bg: "bg-rose-500/8" },
 };
 
 const teachersData = {
@@ -52,10 +52,7 @@ const teachersData = {
 
 const containerVariants = {
   hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.08 },
-  },
+  visible: { opacity: 1, transition: { staggerChildren: 0.08 } },
 };
 
 const itemVariants = {
@@ -65,12 +62,12 @@ const itemVariants = {
 
 export function Teachers() {
   return (
-    <section id="teachers" className="py-24 sm:py-32 md:py-40 bg-muted/40 relative overflow-hidden">
+    <section id="teachers" className="py-20 sm:py-28 md:py-36 bg-muted/40 relative overflow-hidden">
       <div className="absolute left-0 top-1/4 h-64 w-64 -translate-x-1/2 rounded-full bg-secondary/10 blur-3xl" />
       <div className="absolute right-0 bottom-1/4 h-64 w-64 translate-x-1/2 rounded-full bg-primary/5 blur-3xl" />
 
       <div className="container relative mx-auto px-4">
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14 md:mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -91,11 +88,11 @@ export function Teachers() {
         </div>
 
         <Tabs defaultValue="scientific" className="w-full max-w-5xl mx-auto">
-          <div className="flex justify-center mb-8 sm:mb-12 -mx-4 px-4 overflow-x-auto">
+          <div className="flex justify-center mb-8 sm:mb-10 -mx-4 px-4 overflow-x-auto">
             <TabsList className="bg-muted p-1 rounded-xl h-auto min-w-max">
               <TabsTrigger value="ninth" className="text-sm sm:text-base py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg data-[state=active]:bg-white data-[state=active]:text-primary data-[state=active]:shadow-sm">الصف التاسع</TabsTrigger>
-              <TabsTrigger value="scientific" className="text-sm sm:text-base py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg data-[state=active]:bg-white data-[state=active]:text-primary data-[state=active]:shadow-sm">الثالث الثانوي العلمي</TabsTrigger>
-              <TabsTrigger value="literary" className="text-sm sm:text-base py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg data-[state=active]:bg-white data-[state=active]:text-primary data-[state=active]:shadow-sm">الثالث الثانوي الأدبي</TabsTrigger>
+              <TabsTrigger value="scientific" className="text-sm sm:text-base py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg data-[state=active]:bg-white data-[state=active]:text-primary data-[state=active]:shadow-sm">الثالث العلمي</TabsTrigger>
+              <TabsTrigger value="literary" className="text-sm sm:text-base py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg data-[state=active]:bg-white data-[state=active]:text-primary data-[state=active]:shadow-sm">الثالث الأدبي</TabsTrigger>
             </TabsList>
           </div>
 
@@ -106,7 +103,7 @@ export function Teachers() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5"
               >
                 {teachersData[tab].map((teacher, i) => (
                   <TeacherCard key={i} teacher={teacher} />
@@ -121,42 +118,42 @@ export function Teachers() {
 }
 
 function TeacherCard({ teacher }: { teacher: { subject: string; name: string } }) {
-  const decorator = subjectDecorators[teacher.subject] ?? { symbol: "★", color: "text-secondary" };
+  const d = subjectDecorators[teacher.subject] ?? { symbol: "★", color: "text-secondary", bg: "bg-secondary/8" };
 
   return (
     <motion.div
       variants={itemVariants}
-      whileHover={{ y: -5 }}
-      className="group flex flex-col bg-card border border-border p-5 sm:p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all hover:border-secondary/40 relative overflow-hidden"
+      whileHover={{ y: -4, scale: 1.02 }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      className={`group relative overflow-hidden rounded-2xl border border-border shadow-sm hover:shadow-md transition-shadow ${d.bg} bg-card`}
     >
-      {/* Top accent line on hover */}
-      <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-r from-transparent via-secondary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-      {/* Decorative subject symbol — large, behind content */}
-      <motion.span
+      {/* Full-card animated symbol background */}
+      <motion.div
         aria-hidden="true"
-        className={`pointer-events-none select-none absolute -bottom-3 -left-2 text-[6rem] leading-none font-black opacity-[0.07] group-hover:opacity-[0.13] transition-opacity duration-500 ${decorator.color}`}
-        animate={{ rotate: [0, 6, -4, 0], scale: [1, 1.06, 0.97, 1] }}
-        transition={{ repeat: Infinity, duration: 7, ease: "easeInOut" }}
+        className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"
+        animate={{ rotate: [0, 4, -3, 0], scale: [1, 1.08, 0.96, 1] }}
+        transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
       >
-        {decorator.symbol}
-      </motion.span>
+        <span className={`text-[7rem] sm:text-[8rem] font-black leading-none opacity-[0.10] group-hover:opacity-[0.18] transition-opacity duration-500 ${d.color}`}>
+          {d.symbol}
+        </span>
+      </motion.div>
 
-      {/* Small floating badge top-left */}
-      <motion.span
-        aria-hidden="true"
-        className={`absolute top-4 left-4 text-lg opacity-30 group-hover:opacity-60 transition-opacity duration-300 ${decorator.color}`}
-        animate={{ y: [0, -4, 0] }}
-        transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut" }}
-      >
-        {decorator.symbol}
-      </motion.span>
+      {/* Hover top accent */}
+      <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-secondary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-      {/* Card content */}
-      <span className="text-xs sm:text-sm font-semibold text-secondary mb-2 uppercase tracking-wider">
-        {teacher.subject}
-      </span>
-      <h3 className="text-lg sm:text-xl font-bold text-foreground">الأستاذ {teacher.name}</h3>
+      {/* Card content — RTL layout */}
+      <div className="relative z-10 p-5 sm:p-6 flex flex-col gap-2 text-right" dir="rtl">
+        {/* Subject badge — top right */}
+        <span className={`self-start text-xs font-bold px-2.5 py-1 rounded-full border ${d.color} border-current/30 bg-white/60 backdrop-blur-sm`}>
+          {teacher.subject}
+        </span>
+
+        {/* Teacher name */}
+        <h3 className="text-lg sm:text-xl font-bold text-foreground mt-1">
+          الأستاذ {teacher.name}
+        </h3>
+      </div>
     </motion.div>
   );
 }
