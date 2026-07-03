@@ -34,16 +34,6 @@ export function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex flex-col gap-5 sm:gap-6 text-center lg:text-right"
           >
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="inline-flex items-center gap-2 self-center rounded-full border border-secondary/30 bg-secondary/10 px-3 py-1 text-xs sm:text-sm font-medium text-secondary lg:self-start"
-            >
-              <span className="flex h-2 w-2 rounded-full bg-secondary animate-pulse"></span>
-              تأسس عام 2018 — سوريا، الرقة
-            </motion.div>
-
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

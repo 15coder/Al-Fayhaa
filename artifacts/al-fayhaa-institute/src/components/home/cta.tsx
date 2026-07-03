@@ -6,7 +6,7 @@ import LogoMark from "@/assets/logo-mark.png";
 export function Cta() {
   return (
     <section className="py-16 sm:py-24 md:py-32 relative overflow-hidden">
-      {/* Complex Gradient Background */}
+      {/* Background */}
       <div className="absolute inset-0 bg-primary" />
       <motion.div
         className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,var(--color-secondary)_0%,transparent_50%)]"
@@ -18,8 +18,6 @@ export function Cta() {
         animate={{ opacity: [0.15, 0.3, 0.15] }}
         transition={{ repeat: Infinity, duration: 7, ease: "easeInOut", delay: 1.5 }}
       />
-
-      {/* Noise Texture */}
       <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E")' }} />
 
       <motion.img
@@ -33,11 +31,11 @@ export function Cta() {
 
       <div className="container relative mx-auto px-4 text-center">
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="max-w-3xl mx-auto bg-white/5 backdrop-blur-md border border-white/10 p-7 sm:p-10 md:p-16 rounded-[2rem] sm:rounded-[3rem] shadow-2xl"
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl mx-auto"
         >
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
             استثمر في مستقبلك، <br />
