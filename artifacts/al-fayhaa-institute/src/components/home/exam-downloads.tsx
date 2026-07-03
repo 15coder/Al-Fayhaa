@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FileText, Send } from "lucide-react";
+import { FileText, Send, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import LogoMark from "@/assets/logo-mark.png";
 
@@ -43,6 +43,10 @@ export function ExamDownloads() {
             </a>
           </Button>
 
+          <p className="inline-flex items-center gap-1.5 text-xs sm:text-sm text-muted-foreground">
+            <Download className="h-4 w-4" />
+            يتم تحديث الأسئلة بشكل دوري عبر البوت
+          </p>
         </motion.div>
       </div>
     </section>

@@ -5,21 +5,21 @@ import { News } from "@/components/home/news";
 import { Tracks } from "@/components/home/tracks";
 import { Teachers } from "@/components/home/teachers";
 import { ExamDownloads } from "@/components/home/exam-downloads";
+import { Location } from "@/components/home/location";
 import { Cta } from "@/components/home/cta";
 import { FloatingWhatsapp } from "@/components/ui/floating-whatsapp";
-import { ScientificBackground } from "@/components/ui/scientific-background";
 
 export default function Home() {
   return (
-    <div className="relative flex min-h-screen flex-col bg-background font-sans overflow-x-hidden">
-      <ScientificBackground />
+    <div className="flex min-h-screen flex-col bg-background font-sans overflow-x-hidden">
       <Header />
-      <main className="relative z-10 flex-1">
+      <main className="flex-1">
         <Hero />
         <News />
         <Tracks />
         <Teachers />
         <ExamDownloads />
+        <Location />
         <Cta />
       </main>
       <Footer />
