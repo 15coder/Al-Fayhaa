@@ -1,10 +1,10 @@
-import { MapPin, MessageCircle, ExternalLink } from "lucide-react";
+import { MapPin, MessageCircle, Sparkles } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border/40 bg-primary text-primary-foreground">
+    <footer className="border-t border-border/40 bg-primary text-primary-foreground relative z-10">
       {/* Main compact row */}
-      <div className="container mx-auto px-4 py-6 sm:py-8">
+      <div className="container mx-auto px-5 py-6 sm:py-8">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-5 sm:gap-8">
 
           {/* Logo + Name */}
@@ -49,31 +49,30 @@ export function Footer() {
               <MessageCircle className="h-4 w-4" />
               <span dir="ltr">+963 934 311 019</span>
             </a>
-            <a
-              href="https://maps.app.goo.gl/LzGA8pXZ8ArSW1BB6?g_st=ac"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm text-primary-foreground/70 hover:text-secondary transition-colors"
-            >
+            <span className="inline-flex items-center gap-1.5 text-sm text-primary-foreground/60">
               <MapPin className="h-4 w-4 text-secondary shrink-0" />
               معدان جديد
-            </a>
+            </span>
           </div>
         </div>
       </div>
 
       {/* Bottom bar */}
       <div className="border-t border-primary-foreground/10">
-        <div className="container mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-1.5 text-xs text-primary-foreground/40">
-          <p>جميع الحقوق محفوظة &copy; {new Date().getFullYear()} معهد الفيحاء التعليمي.</p>
+        <div className="container mx-auto px-5 py-3 flex flex-col sm:flex-row items-center justify-between gap-2">
+          <p className="text-xs text-primary-foreground/40">
+            جميع الحقوق محفوظة &copy; {new Date().getFullYear()} معهد الفيحاء التعليمي.
+          </p>
+
+          {/* Prominent developer credit */}
           <a
             href="https://needaa.netlify.app"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 hover:text-secondary transition-colors"
+            className="group inline-flex items-center gap-1.5 rounded-full border border-secondary/40 bg-secondary/10 px-3 py-1 text-xs font-semibold text-secondary hover:bg-secondary/20 hover:border-secondary/70 transition-all duration-200"
           >
+            <Sparkles className="h-3 w-3 group-hover:scale-110 transition-transform" />
             برمجة نداء الرحمن عبود
-            <ExternalLink className="h-3 w-3" />
           </a>
         </div>
       </div>
