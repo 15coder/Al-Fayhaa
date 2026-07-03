@@ -3,7 +3,7 @@ import { MapPin, ExternalLink } from "lucide-react";
 
 export function Location() {
   return (
-    <section id="location" className="py-20 sm:py-24 bg-background">
+    <section id="location" className="py-24 sm:py-32 md:py-40 bg-muted/40">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
           <motion.h2

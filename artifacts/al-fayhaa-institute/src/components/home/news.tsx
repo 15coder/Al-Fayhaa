@@ -13,7 +13,7 @@ const news = [
 
 export function News() {
   return (
-    <section id="news" className="py-20 sm:py-24 md:py-28 bg-background relative overflow-hidden">
+    <section id="news" className="py-24 sm:py-32 md:py-40 bg-muted/40 relative overflow-hidden">
       <div className="container relative mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14 md:mb-16">
           <motion.h2

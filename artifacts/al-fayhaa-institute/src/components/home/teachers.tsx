@@ -51,7 +51,7 @@ const itemVariants = {
 
 export function Teachers() {
   return (
-    <section id="teachers" className="py-20 sm:py-24 md:py-28 bg-background relative overflow-hidden">
+    <section id="teachers" className="py-24 sm:py-32 md:py-40 bg-muted/40 relative overflow-hidden">
       {/* Decorative blobs */}
       <div className="absolute left-0 top-1/4 h-64 w-64 -translate-x-1/2 rounded-full bg-secondary/10 blur-3xl" />
       <div className="absolute right-0 bottom-1/4 h-64 w-64 translate-x-1/2 rounded-full bg-primary/5 blur-3xl" />
