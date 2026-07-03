@@ -5,7 +5,7 @@ import LogoMark from "@/assets/logo-mark.png";
 
 export function ExamDownloads() {
   return (
-    <section id="exams" className="py-24 sm:py-32 md:py-40 bg-transparent relative overflow-hidden">
+    <section id="exams" className="py-24 sm:py-32 bg-transparent relative overflow-hidden min-h-screen flex flex-col justify-center" style={{ scrollSnapAlign: "start" }}>
       <motion.img
         src={LogoMark}
         alt=""
@@ -18,10 +18,10 @@ export function ExamDownloads() {
 
       <div className="container relative mx-auto px-4">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           className="max-w-4xl mx-auto bg-card border border-border rounded-[2rem] sm:rounded-[2.5rem] shadow-xl p-7 sm:p-10 md:p-14 text-center flex flex-col items-center gap-5 sm:gap-6"
         >
           <div className="h-16 w-16 sm:h-20 sm:w-20 rounded-2xl bg-secondary/10 text-secondary flex items-center justify-center">

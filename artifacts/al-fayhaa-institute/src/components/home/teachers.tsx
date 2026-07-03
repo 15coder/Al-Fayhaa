@@ -62,16 +62,17 @@ const itemVariants = {
 
 export function Teachers() {
   return (
-    <section id="teachers" className="py-24 sm:py-32 md:py-40 bg-transparent relative overflow-hidden">
+    <section id="teachers" className="py-24 sm:py-32 bg-transparent relative overflow-hidden min-h-screen flex flex-col justify-center" style={{ scrollSnapAlign: "start" }}>
       <div className="absolute left-0 top-1/4 h-64 w-64 -translate-x-1/2 rounded-full bg-secondary/10 blur-3xl" />
       <div className="absolute right-0 bottom-1/4 h-64 w-64 translate-x-1/2 rounded-full bg-primary/5 blur-3xl" />
 
       <div className="container relative mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
             className="text-2xl sm:text-3xl font-bold text-primary md:text-4xl mb-3 sm:mb-4 dark:text-white"
           >
             نخبة الكادر التدريسي

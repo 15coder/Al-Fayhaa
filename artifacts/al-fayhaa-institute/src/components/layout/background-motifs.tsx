@@ -25,7 +25,7 @@ const motifs: Motif[] = [
 
 export function BackgroundMotifs() {
   return (
-    <div className="pointer-events-none fixed inset-0 overflow-hidden -z-10" aria-hidden="true">
+    <div className="pointer-events-none fixed inset-0 overflow-hidden" style={{ zIndex: -1 }} aria-hidden="true">
       {motifs.map((m, i) => (
         <motion.img
           key={i}

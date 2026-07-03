@@ -12,13 +12,13 @@ export default function Home() {
   return (
     <div className="relative flex min-h-screen flex-col font-sans overflow-x-hidden">
       <BackgroundMotifs />
-      <div className="fixed inset-0 -z-10 bg-background">
+      <div className="fixed inset-0 bg-background" style={{ zIndex: -10 }}>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_60%_at_15%_10%,hsl(var(--primary)/0.06),transparent)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_85%_80%,hsl(167_100%_70%/0.05),transparent)]" />
       </div>
 
       <Header />
-      <main className="flex-1 pt-20">
+      <main className="flex-1 pt-20" style={{ scrollSnapType: "y proximity" }}>
         <Hero />
         <News />
         <Tracks />

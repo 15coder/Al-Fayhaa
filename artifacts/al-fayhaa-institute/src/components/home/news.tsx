@@ -13,13 +13,14 @@ const news = [
 
 export function News() {
   return (
-    <section id="news" className="py-24 sm:py-32 md:py-40 bg-transparent relative overflow-hidden">
+    <section id="news" className="py-24 sm:py-32 bg-transparent relative overflow-hidden min-h-screen flex flex-col justify-center" style={{ scrollSnapAlign: "start" }}>
       <div className="container relative mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14 md:mb-16">
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
             className="text-2xl sm:text-3xl font-bold text-primary md:text-4xl mb-3 sm:mb-4"
           >
             آخر الأخبار
