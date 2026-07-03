@@ -1,4 +1,4 @@
-import { ExternalLink, ShieldCheck } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 export function Footer() {
   return (
@@ -16,12 +16,6 @@ export function Footer() {
             <p className="font-bold text-base leading-tight">معهد الفيحاء التعليمي</p>
             <p className="text-primary-foreground/60 text-xs">تأسس عام 2018 — الرقة، سوريا</p>
           </div>
-        </div>
-
-        {/* License badge */}
-        <div className="inline-flex items-center gap-1.5 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-1.5 text-xs font-medium text-primary-foreground/80">
-          <ShieldCheck className="h-3.5 w-3.5 text-secondary shrink-0" />
-          مرخص من وزارة التربية والتعليم
         </div>
 
         {/* Prominent developer card */}

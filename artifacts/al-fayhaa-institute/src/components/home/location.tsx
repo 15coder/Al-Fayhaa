@@ -53,28 +53,6 @@ export function Location() {
             </a>
           </div>
 
-          <a
-            href="https://maps.app.goo.gl/LzGA8pXZ8ArSW1BB6?g_st=ac"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative block h-64 sm:h-80 md:h-96 w-full overflow-hidden border-t border-border"
-            aria-label="فتح موقع المعهد في خرائط جوجل"
-          >
-            <iframe
-              title="موقع معهد الفيحاء التعليمي على الخريطة"
-              src="https://maps.google.com/maps?q=%D9%85%D8%B9%D8%AF%D8%A7%D9%86%20%D8%AC%D8%AF%D9%8A%D8%AF%D8%8C%20%D8%A7%D9%84%D8%B1%D9%82%D8%A9%2C%20%D8%B3%D9%88%D8%B1%D9%8A%D8%A7&z=12&output=embed"
-              width="100%"
-              height="100%"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="absolute inset-0 h-full w-full pointer-events-none"
-            />
-            <div className="absolute inset-0 bg-transparent group-hover:bg-black/5 transition-colors" />
-            <span className="absolute bottom-4 left-1/2 -translate-x-1/2 inline-flex items-center gap-2 rounded-full bg-background/95 backdrop-blur px-4 py-2 text-xs sm:text-sm font-bold text-primary shadow-lg border border-border">
-              <MapPin className="h-4 w-4 text-teal-600" />
-              اضغط لفتح الموقع في خرائط جوجل
-            </span>
-          </a>
         </motion.div>
       </div>
     </section>
