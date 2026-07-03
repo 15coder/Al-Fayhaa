@@ -1,5 +1,5 @@
 [build]
-  command = "npm install -g pnpm && pnpm install && pnpm --filter @workspace/al-fayhaa-institute build"
+  command = "pnpm install && pnpm --filter @workspace/al-fayhaa-institute build"
   publish = "artifacts/al-fayhaa-institute/dist/public"
 
 [build.environment]
