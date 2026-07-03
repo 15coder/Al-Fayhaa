@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { Menu, X } from "lucide-react";
 
@@ -12,11 +12,23 @@ const navLinks = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <div className="sticky top-3 z-50 px-3">
-      {/* Floating pill bar */}
-      <div className="rounded-2xl bg-background/95 backdrop-blur-md shadow-md border border-border/40 px-4 h-14 flex items-center justify-between">
+    <div className="fixed top-0 left-0 right-0 z-50 px-3 pt-3">
+      <div
+        className={`rounded-2xl border px-4 h-14 flex items-center justify-between transition-all duration-300 ${
+          scrolled
+            ? "bg-background/60 backdrop-blur-xl shadow-lg border-border/50"
+            : "bg-background/30 backdrop-blur-sm shadow-sm border-border/20"
+        }`}
+      >
 
         {/* Left: hamburger */}
         <button
@@ -48,9 +60,9 @@ export function Header() {
         </Link>
       </div>
 
-      {/* Mobile dropdown — inside same pill layout */}
+      {/* Mobile dropdown */}
       <div className={`lg:hidden overflow-hidden transition-[max-height,opacity] duration-300 ease-in-out ${open ? "max-h-80 opacity-100" : "max-h-0 opacity-0"}`}>
-        <div className="mt-1.5 rounded-2xl bg-background/98 backdrop-blur-md shadow-md border border-border/40 px-4 py-3 flex flex-col gap-0.5">
+        <div className="mt-1.5 rounded-2xl bg-background/80 backdrop-blur-xl shadow-md border border-border/40 px-4 py-3 flex flex-col gap-0.5">
           {navLinks.map((l) => (
             <a key={l.href} href={l.href} onClick={() => setOpen(false)}
               className="rounded-xl px-4 py-3 text-base font-medium text-foreground/75 hover:bg-muted hover:text-primary transition-colors">

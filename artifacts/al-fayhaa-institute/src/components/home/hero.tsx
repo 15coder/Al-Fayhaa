@@ -42,30 +42,13 @@ export function Hero() {
             <motion.h1
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-[1.75rem] sm:text-5xl md:text-6xl font-extrabold tracking-tight text-primary whitespace-nowrap leading-tight"
+              className="text-[2.4rem] sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-primary leading-tight"
             >
               معهد الفيحاء{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-l from-teal-600 to-primary">
                 التعليمي
               </span>
             </motion.h1>
-
-            {/* Subtitle */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-xl sm:text-2xl font-bold text-foreground"
-            >
-              نصنع <span className="text-teal-600 font-extrabold">التفوق</span>، وليس مجرد وعود
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.3 }}
-              className="text-base sm:text-lg text-muted-foreground md:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0"
-            >
-              دورات مكثفة ومختصة تحضّر طلاب الصف التاسع والبكالوريا (علمي وأدبي) للنجاح والتفوق.
-            </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
