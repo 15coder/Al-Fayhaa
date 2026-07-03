@@ -6,11 +6,17 @@ import { Tracks } from "@/components/home/tracks";
 import { Teachers } from "@/components/home/teachers";
 import { ExamDownloads } from "@/components/home/exam-downloads";
 import { Cta } from "@/components/home/cta";
-import { FloatingWhatsapp } from "@/components/ui/floating-whatsapp";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-background font-sans overflow-x-hidden">
+    <div className="relative flex min-h-screen flex-col font-sans overflow-x-hidden">
+      {/* Unified page-level background */}
+      <div className="fixed inset-0 -z-10 bg-background">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_60%_at_15%_10%,hsl(var(--primary)/0.07),transparent)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_85%_80%,hsl(var(--secondary)/0.07),transparent)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_50%,hsl(var(--primary)/0.03),transparent)]" />
+      </div>
+
       <Header />
       <main className="flex-1">
         <Hero />
@@ -21,7 +27,6 @@ export default function Home() {
         <Cta />
       </main>
       <Footer />
-      <FloatingWhatsapp />
     </div>
   );
 }

@@ -5,7 +5,7 @@ import VerticalLogo from "@assets/20260703_055612_1783047654649.jpg";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-background pt-10 sm:pt-16 md:pt-24 lg:pt-28 pb-16 sm:pb-24 md:pb-32">
+    <section className="relative overflow-hidden bg-transparent pt-10 sm:pt-16 md:pt-24 lg:pt-28 pb-16 sm:pb-24 md:pb-32">
       {/* Abstract Background Shapes */}
       <motion.div
         className="absolute top-0 right-0 -translate-y-12 translate-x-1/3"
@@ -38,10 +38,9 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.15 }}
-              className="text-[2.35rem] leading-[1.15] sm:text-5xl sm:leading-[1.1] md:text-6xl lg:text-6xl/tight font-extrabold tracking-tight text-primary dark:text-white"
+              className="text-[1.75rem] sm:text-5xl md:text-6xl font-extrabold tracking-tight text-primary dark:text-white whitespace-nowrap leading-tight"
             >
-              معهد الفيحاء
-              <br />
+              معهد الفيحاء{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-l from-secondary to-primary dark:to-secondary/70">
                 التعليميّ
               </span>
