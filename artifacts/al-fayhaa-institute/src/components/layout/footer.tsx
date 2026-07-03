@@ -3,7 +3,7 @@ import { ExternalLink, ShieldCheck } from "lucide-react";
 export function Footer() {
   return (
     <footer className="border-t border-border/40 bg-primary text-primary-foreground">
-      <div className="container mx-auto px-5 py-6 flex flex-col items-center gap-4 text-center">
+      <div className="container mx-auto px-5 py-8 flex flex-col items-center gap-5 text-center">
 
         {/* Logo + Name */}
         <div className="flex items-center gap-3">
@@ -24,19 +24,25 @@ export function Footer() {
           مرخص من وزارة التربية والتعليم
         </div>
 
-        {/* Bottom row */}
-        <div className="flex flex-col sm:flex-row items-center gap-2 text-xs text-primary-foreground/40 pt-1 border-t border-primary-foreground/10 w-full justify-between">
-          <p>جميع الحقوق محفوظة &copy; {new Date().getFullYear()} معهد الفيحاء التعليمي.</p>
-          <a
-            href="https://needaa.netlify.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 hover:text-secondary transition-colors"
-          >
-            برمجة نداء الرحمن عبود
+        {/* Prominent developer card */}
+        <a
+          href="https://needaa.netlify.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group w-full max-w-xs rounded-2xl border-2 border-secondary/40 bg-secondary/10 px-5 py-4 flex flex-col items-center gap-1 hover:bg-secondary/20 hover:border-secondary/70 transition-all duration-300"
+        >
+          <p className="text-xs text-primary-foreground/60 font-medium">تصميم وبرمجة</p>
+          <p className="text-base font-extrabold text-white tracking-wide">نداء الرحمن عبود</p>
+          <span className="mt-1 inline-flex items-center gap-1.5 text-xs font-semibold text-secondary group-hover:gap-2.5 transition-all">
+            انقر هنا لرؤية الموقع الشخصي
             <ExternalLink className="h-3 w-3" />
-          </a>
-        </div>
+          </span>
+        </a>
+
+        {/* Copyright */}
+        <p className="text-xs text-primary-foreground/30 pt-1 border-t border-primary-foreground/10 w-full">
+          جميع الحقوق محفوظة &copy; {new Date().getFullYear()} معهد الفيحاء التعليمي.
+        </p>
       </div>
     </footer>
   );

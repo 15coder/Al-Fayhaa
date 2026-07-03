@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, ArrowLeft } from "lucide-react";
+import { MessageCircle, ArrowLeft, ShieldCheck } from "lucide-react";
 import VerticalLogo from "@assets/20260703_055612_1783047654649.jpg";
 
 export function Hero() {
@@ -19,7 +19,7 @@ export function Hero() {
         animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.9, 0.5] }}
         transition={{ repeat: Infinity, duration: 10, ease: "easeInOut", delay: 1 }}
       >
-        <div className="h-[320px] w-[320px] sm:h-[500px] sm:w-[500px] rounded-full bg-primary/5 dark:bg-secondary/10 blur-[100px]" />
+        <div className="h-[320px] w-[320px] sm:h-[500px] sm:w-[500px] rounded-full bg-primary/5 blur-[100px]" />
       </motion.div>
 
       {/* Decorative Grid */}
@@ -83,6 +83,19 @@ export function Hero() {
                 </a>
               </Button>
             </motion.div>
+
+            {/* License badge — visible in first screen */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.55 }}
+              className="flex justify-center lg:justify-start"
+            >
+              <div className="inline-flex items-center gap-2 rounded-full border border-secondary/30 bg-secondary/8 px-4 py-1.5 text-xs font-semibold text-primary/80">
+                <ShieldCheck className="h-3.5 w-3.5 text-secondary shrink-0" />
+                مرخص من وزارة التربية والتعليم
+              </div>
+            </motion.div>
           </motion.div>
 
           <motion.div
@@ -91,9 +104,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="relative mx-auto w-full max-w-sm sm:max-w-md lg:max-w-none"
           >
-            {/* Visual focus replacing real photo */}
             <div className="relative aspect-[4/5] rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/10 border border-border shadow-2xl flex items-center justify-center p-6 sm:p-8">
-              {/* Dynamic shapes inside */}
               <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.2)_50%,transparent_75%,transparent_100%)] bg-[length:250%_250%,100%_100%] animate-[gradient_8s_linear_infinite]" />
 
               <motion.img
@@ -105,7 +116,6 @@ export function Hero() {
                 transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
               />
 
-              {/* Floating elements */}
               <motion.div
                 className="absolute top-8 right-8 sm:top-10 sm:right-10 h-14 w-14 sm:h-16 sm:w-16 rounded-2xl bg-secondary/20 backdrop-blur-md border border-secondary/30 flex items-center justify-center shadow-lg"
                 animate={{ rotate: 360 }}
